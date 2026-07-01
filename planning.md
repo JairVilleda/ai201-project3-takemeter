@@ -146,3 +146,26 @@ I used Claude Code to build the annotation workflow and supporting tools for dat
 - A helper script (add_examples.py) that imports batches of collected r/worldcup posts/comments into worldcup_dataset.csv, automatically formats the data, and prevents duplicate entries.
 - A manual annotation tool (annotate.py) that presents one unlabeled example at a time, allows me to assign one of the three predefined labels (Analysis, Prediction, or Reaction), optionally record notes for difficult cases, automatically saves progress after each annotation, supports resuming where I left off, and monitors label distribution throughout the annotation process.
 No AI was used to assign labels to the final dataset. Every example was reviewed and labeled manually by me according to the label definitions and decision rules described in this planning document.
+
+---
+
+## Baseline Results (Pre-Fine-Tuning)
+
+Zero-shot baseline model: Groq llama-3.3-70b-versatile
+
+Overall Accuracy: 61.3%
+
+Per-class performance:
+- Analysis: Precision 0.58, Recall 0.58, F1 0.58
+- Prediction: Precision 0.75, Recall 0.67, F1 0.71
+- Reaction: Precision 0.55, Recall 0.60, F1 0.57
+
+### Initial Observations
+
+The baseline performed best on Prediction, suggesting that future-oriented language is relatively easy for a general-purpose LLM to identify. The weakest performance was on Analysis and Reaction, indicating that the model sometimes confuses tactical observations with emotional opinions. This is expected because many r/worldcup comments contain both emotional language and soccer analysis.
+
+### Hypothesis
+
+I expect the fine-tuned DistilBERT model to improve the distinction between Analysis and Reaction by learning the annotation guidelines and decision rules developed for this project. I also expect it to better distinguish mixed Analysis/Prediction posts by learning that future-oriented primary claims should be labeled as Prediction.
+
+---
