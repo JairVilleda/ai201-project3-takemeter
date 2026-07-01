@@ -1,0 +1,6 @@
+text,label,notes
+"Cristiano Ronaldo breaks a 60-year-old record, becoming Portugal's highest goal scorer in the FIFA World Cup.",Analysis,"States a factual claim backed by a specific record/statistic. No future forecast, so Analysis."
+WHAT A GOAL! That's one of the best goals so far this tournament.,Reaction,Pure emotional response with no reasoning or evidence.
+Mbappe will finish the tournament as the leading scorer.,Prediction,Forecasts a future outcome with no supporting evidence.
+"The Argentinian squad actually wants to create chances for Messi because Messi leaves his ego in the locker room, while Ronaldo makes everything about himself on the world stage.",Analysis,"Explains a current dynamic using observation/reasoning. Describes how things are, not a forecast."
+"Spain will win the World Cup because they create more chances than any other team and have allowed the fewest shots on target.",Prediction,"Edge case: contains analytical evidence, but the primary claim is future-oriented (will win). Per the decision rule, future-oriented main claim => Prediction. Alternative considered: Analysis."
